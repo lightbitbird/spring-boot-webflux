@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class sample.webflux.SampleWebFluxApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class sample.webflux.SampleWebFluxApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/sample.webflux.html">sample.webflux</a> &gt; SampleWebFluxApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">6</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">4</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">5.626s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">33%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="testList"></a>
+<h3 class="failures">testList</h3>
+<span class="code">
+<pre>org.springframework.core.codec.DecodingException: JSON decoding error: No content to map due to end-of-input; nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (io.netty.buffer.ByteBufInputStream); line: 1, column: 0]
+	at org.springframework.http.codec.json.Jackson2JsonDecoder.lambda$decodeInternal$0(Jackson2JsonDecoder.java:124)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:100)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:608)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:487)
+	at reactor.core.publisher.FluxFlatMap$FlatMapInner.onSubscribe(FluxFlatMap.java:896)
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:89)
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:54)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:380)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:170)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:170)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:170)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:170)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108)
+	at reactor.ipc.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:207)
+	at reactor.ipc.netty.channel.FluxReceive.request(FluxReceive.java:104)
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:148)
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:148)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.request(FluxPeek.java:119)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.request(FluxPeek.java:119)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.request(FluxPeek.java:119)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.request(FluxPeek.java:119)
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onSubscribe(FluxFlatMap.java:341)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onSubscribe(FluxPeek.java:150)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onSubscribe(FluxPeek.java:150)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onSubscribe(FluxPeek.java:150)
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onSubscribe(FluxPeek.java:150)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onSubscribe(FluxMap.java:86)
+	at reactor.core.publisher.FluxMap$MapSubscriber.onSubscribe(FluxMap.java:86)
+	at reactor.ipc.netty.channel.FluxReceive.startReceiver(FluxReceive.java:269)
+	at reactor.ipc.netty.channel.FluxReceive.lambda$subscribe$2(FluxReceive.java:125)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.fasterxml.jackson.databind.exc.MismatchedInputException: No content to map due to end-of-input
+ at [Source: (io.netty.buffer.ByteBufInputStream); line: 1, column: 0]
+	at com.fasterxml.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:58)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1320)
+	at com.fasterxml.jackson.databind.ObjectReader._initForReading(ObjectReader.java:356)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1598)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1183)
+	at org.springframework.http.codec.json.Jackson2JsonDecoder.lambda$decodeInternal$0(Jackson2JsonDecoder.java:116)
+	... 35 more
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testMultiStream"></a>
+<h3 class="failures">testMultiStream</h3>
+<span class="code">
+<pre>java.lang.IllegalStateException: Timeout on blocking read for 5000 MILLISECONDS
+	at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:106)
+	at reactor.core.publisher.Mono.block(Mono.java:1312)
+	at org.springframework.test.web.reactive.server.DefaultWebTestClient$UndecodedExchangeResult.decode(DefaultWebTestClient.java:295)
+	at org.springframework.test.web.reactive.server.DefaultWebTestClient$DefaultResponseSpec.expectBody(DefaultWebTestClient.java:338)
+	at sample.webflux.SampleWebFluxApplicationTests.testMultiStream(SampleWebFluxApplicationTests.java:125)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:73)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:83)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:250)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:189)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:146)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:128)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testSave"></a>
+<h3 class="failures">testSave</h3>
+<span class="code">
+<pre>org.mockito.exceptions.misusing.WrongTypeOfReturnValue: 
+FluxJust cannot be returned by findAll()
+findAll() should return List
+***
+If you're unsure why you're getting above error read on.
+Due to the nature of the syntax above problem might occur because:
+1. This exception *might* occur in wrongly written multi-threaded tests.
+   Please refer to Mockito FAQ on limitations of concurrency testing.
+2. A spy is stubbed using when(spy.foo()).then() syntax. It is safer to stub spies - 
+   - with doReturn|Throw() family of methods. More in javadocs for Mockito.spy() method.
+
+	at sample.webflux.SampleWebFluxApplicationTests.testSave(SampleWebFluxApplicationTests.java:86)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestExecutionCallbacks.evaluate(RunBeforeTestExecutionCallbacks.java:73)
+	at org.springframework.test.context.junit4.statements.RunAfterTestExecutionCallbacks.evaluate(RunAfterTestExecutionCallbacks.java:83)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:250)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:189)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.runTestClass(JUnitTestClassExecuter.java:114)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecuter.execute(JUnitTestClassExecuter.java:57)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassProcessor.processTestClass(JUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy1.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:109)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:146)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:128)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.StoppableExecutorImpl$1.run(StoppableExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:745)
+</pre>
+</span>
+</div>
+<div class="test">
+<a name="testUpdate"></a>
+<h3 class="failures">testUpdate</h3>
+<span class="code">
+<pre>reactor.ipc.netty.http.client.HttpClientException: HTTP request failed with code: 500.
+Failing URI: /person/update/2
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">testEcho</td>
+<td>0.029s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">testIndex</td>
+<td>0.332s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">testList</td>
+<td>0.131s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testMultiStream</td>
+<td>5.067s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testSave</td>
+<td>0.015s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">testUpdate</td>
+<td>0.052s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>13:37:11.080 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class sample.webflux.SampleWebFluxApplicationTests]
+13:37:11.089 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+13:37:11.101 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+13:37:11.119 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [sample.webflux.SampleWebFluxApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+13:37:11.151 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [sample.webflux.SampleWebFluxApplicationTests]: class path resource [sample/webflux/SampleWebFluxApplicationTests-context.xml] does not exist
+13:37:11.151 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [sample.webflux.SampleWebFluxApplicationTests]: class path resource [sample/webflux/SampleWebFluxApplicationTestsContext.groovy] does not exist
+13:37:11.152 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [sample.webflux.SampleWebFluxApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:37:11.212 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [sample.webflux.SampleWebFluxApplicationTests]
+13:37:11.336 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [sample.webflux.SampleWebFluxApplicationTests]: using defaults.
+13:37:11.337 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+13:37:11.346 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Could not instantiate TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [javax/servlet/ServletContext]
+13:37:11.427 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@21342f81, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@741c805f, org.springframework.test.context.support.DirtiesContextTestExecutionListener@5842b734, org.springframework.test.context.transaction.TransactionalTestExecutionListener@260ad7f9, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@26c2ac9e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@36ccce61, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7b7a249b, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@b3f8112, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@38aa6ab7, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@68450405, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@42b1bb6a]
+13:37:11.442 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [sample.webflux.SampleWebFluxApplicationTests]
+13:37:11.443 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [sample.webflux.SampleWebFluxApplicationTests]
+13:37:11.444 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [sample.webflux.SampleWebFluxApplicationTests]
+13:37:11.444 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [sample.webflux.SampleWebFluxApplicationTests]
+13:37:11.448 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@5a153bca testClass = SampleWebFluxApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [ReactiveWebMergedContextConfiguration@55091d07 testClass = SampleWebFluxApplicationTests, locations = '{}', classes = '{class com.webflux.MyWebFluxApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6e290db4, org.springframework.boot.test.context.SpringBootTestContextCustomizer@4ee1657d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2ce8cc23, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@72b0290, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@1e154434, org.springframework.boot.test.web.reactive.WebTestClientContextCustomizer@15409b1a], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false]], class annotated with @DirtiesContext [false] with mode [null].
+13:37:11.450 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [sample.webflux.SampleWebFluxApplicationTests]
+13:37:11.450 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [sample.webflux.SampleWebFluxApplicationTests]
+13:37:11.452 [Test worker] DEBUG org.springframework.test.context.support.DependencyInjectionTestExecutionListener - Performing dependency injection for test context [[DefaultTestContext@5a153bca testClass = SampleWebFluxApplicationTests, testInstance = sample.webflux.SampleWebFluxApplicationTests@6566eff5, testMethod = [null], testException = [null], mergedContextConfiguration = [ReactiveWebMergedContextConfiguration@55091d07 testClass = SampleWebFluxApplicationTests, locations = '{}', classes = '{class com.webflux.MyWebFluxApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6e290db4, org.springframework.boot.test.context.SpringBootTestContextCustomizer@4ee1657d, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@2ce8cc23, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@72b0290, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@1e154434, org.springframework.boot.test.web.reactive.WebTestClientContextCustomizer@15409b1a], contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -&gt; false]]].
+13:37:11.473 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:37:11.474 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:37:11.475 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:37:11.477 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=0}
+13:37:11.477 [Test worker] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::             (v2.0.0.M2)
+
+2017-07-23 13:37:21.750  INFO 8245 --- [    Test worker] s.webflux.SampleWebFluxApplicationTests  : Starting SampleWebFluxApplicationTests on seungeun-no-MacBook-Pro.local with PID 8245 (started by seung in /Users/seung/projects/eclipseSpace/spring-boot-mywebflux)
+2017-07-23 13:37:21.752  INFO 8245 --- [    Test worker] s.webflux.SampleWebFluxApplicationTests  : No active profile set, falling back to default profiles: default
+2017-07-23 13:37:21.774  INFO 8245 --- [    Test worker] .r.c.ReactiveWebServerApplicationContext : Refreshing org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext@658cebeb: startup date [Sun Jul 23 13:37:21 JST 2017]; root of context hierarchy
+2017-07-23 13:37:23.392  WARN 8245 --- [    Test worker] o.h.v.m.ParameterMessageInterpolator     : HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2017-07-23 13:37:23.603  WARN 8245 --- [    Test worker] o.h.v.m.ParameterMessageInterpolator     : HV000184: ParameterMessageInterpolator has been chosen, EL interpolation will not be supported
+2017-07-23 13:37:23.855  INFO 8245 --- [    Test worker] o.s.w.r.f.s.s.RouterFunctionMapping      : Mapped org.springframework.web.reactive.function.server.RouterFunction$$Lambda$208/1589562626@646e0d04
+2017-07-23 13:37:23.897  INFO 8245 --- [    Test worker] o.s.w.r.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.reactive.resource.ResourceWebHandler]
+2017-07-23 13:37:23.898  INFO 8245 --- [    Test worker] o.s.w.r.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.reactive.resource.ResourceWebHandler]
+2017-07-23 13:37:23.974  INFO 8245 --- [    Test worker] o.s.w.r.r.m.a.ControllerMethodResolver   : Looking for @ControllerAdvice: org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext@658cebeb: startup date [Sun Jul 23 13:37:21 JST 2017]; root of context hierarchy
+2017-07-23 13:37:24.503  INFO 8245 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2017-07-23 13:37:24.624  INFO 8245 --- [    Test worker] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (org.postgresql.jdbc.PgConnection.getNetworkTimeout() メソッドはまだ実装されていません。)
+2017-07-23 13:37:24.641  INFO 8245 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2017-07-23 13:37:24.705  INFO 8245 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-07-23 13:37:24.733  INFO 8245 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2017-07-23 13:37:24.835  INFO 8245 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.10.Final}
+2017-07-23 13:37:24.839  INFO 8245 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000205: Loaded properties from resource hibernate.properties: {hibernate.bytecode.use_reflection_optimizer=false, hibernate.jdbc.lob.non_contextual_creation=true}
+2017-07-23 13:37:24.887  INFO 8245 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2017-07-23 13:37:25.034  INFO 8245 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2017-07-23 13:37:25.145  INFO 8245 --- [    Test worker] o.h.e.j.e.i.LobCreatorBuilderImpl        : HHH000421: Disabling contextual LOB creation as hibernate.jdbc.lob.non_contextual_creation is true
+2017-07-23 13:37:25.147  INFO 8245 --- [    Test worker] org.hibernate.type.BasicTypeRegistry     : HHH000270: Type registration [java.util.UUID] overrides previous : org.hibernate.type.UUIDBinaryType@17b9cfb9
+2017-07-23 13:37:25.523  INFO 8245 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+-------localhost
+-------0
+2017-07-23 13:37:31.309  INFO 8245 --- [    Test worker] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 60843
+2017-07-23 13:37:31.315  INFO 8245 --- [    Test worker] s.webflux.SampleWebFluxApplicationTests  : Started SampleWebFluxApplicationTests in 19.835 seconds (JVM running for 20.89)
+ id -- 2
+2017-07-23 13:37:37.233 ERROR 8245 --- [ctor-http-nio-3] o.s.w.s.adapter.HttpWebHandlerAdapter    : Failed to handle request
+
+java.lang.IllegalStateException: invalid JSON received at byte position 0: 48656c6c6f20576562466c757821
+	at org.springframework.http.codec.json.JsonObjectDecoder$1.apply(JsonObjectDecoder.java:206) ~[spring-web-5.0.0.RC2.jar:5.0.0.RC2]
+	at org.springframework.http.codec.json.JsonObjectDecoder$1.apply(JsonObjectDecoder.java:104) ~[spring-web-5.0.0.RC2.jar:5.0.0.RC2]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:357) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:170) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.ipc.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:207) ~[reactor-netty-0.6.4.RELEASE.jar:0.6.4.RELEASE]
+	at reactor.ipc.netty.channel.FluxReceive.request(FluxReceive.java:104) ~[reactor-netty-0.6.4.RELEASE.jar:0.6.4.RELEASE]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:148) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.request(FluxPeek.java:119) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxMap$MapSubscriber.request(FluxMap.java:148) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxFlatMap$FlatMapMain.onSubscribe(FluxFlatMap.java:341) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onSubscribe(FluxMap.java:86) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onSubscribe(FluxPeek.java:150) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onSubscribe(FluxMap.java:86) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.ipc.netty.channel.FluxReceive.startReceiver(FluxReceive.java:269) ~[reactor-netty-0.6.4.RELEASE.jar:0.6.4.RELEASE]
+	at reactor.ipc.netty.channel.FluxReceive.subscribe(FluxReceive.java:122) ~[reactor-netty-0.6.4.RELEASE.jar:0.6.4.RELEASE]
+	at reactor.core.publisher.FluxMap.subscribe(FluxMap.java:62) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.ipc.netty.ByteBufFlux.subscribe(ByteBufFlux.java:246) ~[reactor-netty-0.6.4.RELEASE.jar:0.6.4.RELEASE]
+	at reactor.core.publisher.FluxPeek.subscribe(FluxPeek.java:82) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.ipc.netty.ByteBufFlux.subscribe(ByteBufFlux.java:246) ~[reactor-netty-0.6.4.RELEASE.jar:0.6.4.RELEASE]
+	at reactor.core.publisher.FluxMap.subscribe(FluxMap.java:62) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxFlatMap.subscribe(FluxFlatMap.java:95) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxMap.subscribe(FluxMap.java:62) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSingle.subscribe(MonoSingle.java:56) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoOnErrorResume.subscribe(MonoOnErrorResume.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Mono.block(Mono.java:1288) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at com.webflux.handler.PersonHandler.update(PersonHandler.java:33) ~[main/:na]
+	at com.webflux.routing.PersonRouter.update(PersonRouter.java:52) ~[main/:na]
+	at org.springframework.web.reactive.function.server.support.HandlerFunctionAdapter.handle(HandlerFunctionAdapter.java:65) ~[spring-webflux-5.0.0.RC2.jar:5.0.0.RC2]
+	at org.springframework.web.reactive.DispatcherHandler.invokeHandler(DispatcherHandler.java:136) ~[spring-webflux-5.0.0.RC2.jar:5.0.0.RC2]
+	at org.springframework.web.reactive.DispatcherHandler.lambda$handle$1(DispatcherHandler.java:129) ~[spring-webflux-5.0.0.RC2.jar:5.0.0.RC2]
+	at reactor.core.publisher.MonoFlatMap$ThenMapMain.onNext(MonoFlatMap.java:116) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:76) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.innerNext(FluxConcatMap.java:265) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onNext(FluxConcatMap.java:767) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onNext(FluxMap.java:108) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onNext(FluxSwitchIfEmpty.java:67) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators$ScalarSubscription.request(Operators.java:1472) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.set(Operators.java:1288) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onSubscribe(Operators.java:1162) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoJust.subscribe(MonoJust.java:54) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:78) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxSwitchIfEmpty$SwitchIfEmptySubscriber.onComplete(FluxSwitchIfEmpty.java:75) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.Operators.complete(Operators.java:157) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:45) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoMap.subscribe(MonoMap.java:55) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.drain(FluxConcatMap.java:409) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxConcatMap$ConcatMapImmediate.onSubscribe(FluxConcatMap.java:205) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:89) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxIterable.subscribe(FluxIterable.java:54) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.FluxConcatMap.subscribe(FluxConcatMap.java:117) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoNext.subscribe(MonoNext.java:40) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoSwitchIfEmpty.subscribe(MonoSwitchIfEmpty.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:59) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoFlatMap.subscribe(MonoFlatMap.java:59) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoOnErrorResume.subscribe(MonoOnErrorResume.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoOnErrorResume.subscribe(MonoOnErrorResume.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoThenIgnore$ThenIgnoreMain.drain(MonoThenIgnore.java:165) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoThenIgnore.subscribe(MonoThenIgnore.java:55) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoOnErrorResume.subscribe(MonoOnErrorResume.java:44) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.core.publisher.MonoPeekTerminal.subscribe(MonoPeekTerminal.java:60) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+	at reactor.ipc.netty.channel.ChannelOperations.applyHandler(ChannelOperations.java:382) ~[reactor-netty-0.6.4.RELEASE.jar:0.6.4.RELEASE]
+	at reactor.ipc.netty.http.server.HttpServerOperations.onHandlerStart(HttpServerOperations.java:354) ~[reactor-netty-0.6.4.RELEASE.jar:0.6.4.RELEASE]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) ~[netty-common-4.1.12.Final.jar:4.1.12.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403) ~[netty-common-4.1.12.Final.jar:4.1.12.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:462) ~[netty-transport-4.1.12.Final.jar:4.1.12.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858) ~[netty-common-4.1.12.Final.jar:4.1.12.Final]
+	at java.lang.Thread.run(Thread.java:745) ~[na:1.8.0_121]
+	Suppressed: java.lang.Exception: #block terminated with an error
+		at reactor.core.publisher.BlockingSingleSubscriber.blockingGet(BlockingSingleSubscriber.java:86) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+		at reactor.core.publisher.Mono.block(Mono.java:1289) ~[reactor-core-3.1.0.M2.jar:3.1.0.M2]
+		... 92 common frames omitted
+
+2017-07-23 13:37:37.238 ERROR 8245 --- [ctor-http-nio-2] o.s.web.reactive.function.client         : onError(reactor.ipc.netty.http.client.HttpClientException: HTTP request failed with code: 500.
+Failing URI: /person/update/2)
+2017-07-23 13:37:37.239 ERROR 8245 --- [ctor-http-nio-2] o.s.web.reactive.function.client         : 
+
+reactor.ipc.netty.http.client.HttpClientException: HTTP request failed with code: 500.
+Failing URI: /person/update/2
+
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 4.0</a> at 2017/07/23 13:37:42</p>
+</div>
+</div>
+</body>
+</html>
