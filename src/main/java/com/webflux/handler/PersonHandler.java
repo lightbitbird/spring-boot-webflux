@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.reactive.function.server.ServerRequest;
 
 import com.webflux.domain.Person;
@@ -31,10 +32,12 @@ public class PersonHandler {
         return Flux.fromIterable(personRepository.findAll());
     }
 
+    @Transactional
     public Person save(ServerRequest req) {
         return personRepository.save(req.bodyToMono(Person.class).block());
     }
 
+    @Transactional
     public Person update(ServerRequest req) {
         System.out.println(" id -- " + req.pathVariable("id"));
         Person person = req.bodyToMono(Person.class).block();
