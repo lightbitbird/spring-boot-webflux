@@ -16,7 +16,7 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
 import com.webflux.domain.Person;
-import com.webflux.handler.PersonHandler;
+import com.webflux.services.PersonService;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -24,25 +24,25 @@ import reactor.core.publisher.Mono;
 @Component
 public class HelloRouter {
     @Autowired
-    private PersonHandler personHandler;
+    private PersonService personHandler;
 
-	public RouterFunction<ServerResponse> routes() {
-		return nest(path("/hello"), route(GET("/"), this::hello).andRoute(GET("/hoge"), this::hoge)
-				.andRoute(GET("/{name}"), this::helloName));
-	}
+    public RouterFunction<ServerResponse> routes() {
+        return nest(path("/hello"), route(GET("/"), this::hello).andRoute(GET("/hoge"), this::hoge)
+                .andRoute(GET("/{name}"), this::helloName));
+    }
 
-	private Mono<ServerResponse> hello(ServerRequest req) {
-		return ok().body(Flux.just("Hello ", "Webflux"), String.class);
-	}
+    private Mono<ServerResponse> hello(ServerRequest req) {
+        return ok().body(Flux.just("Hello ", "Webflux"), String.class);
+    }
 
-	private Mono<ServerResponse> hoge(ServerRequest req) {
-	    Optional<Person> pers1 = personHandler.findById(Long.valueOf(1));
+    private Mono<ServerResponse> hoge(ServerRequest req) {
+        Optional<Person> pers1 = personHandler.findById(Long.valueOf(1));
 
-		return ok().body(Flux.just(pers1.get().getFirstName(), pers1.get().getLastName()), String.class);
-	}
+        return ok().body(Flux.just(pers1.get().getFirstName(), pers1.get().getLastName()), String.class);
+    }
 
-	private Mono<ServerResponse> helloName(ServerRequest req) {
-		return ok().contentType(MediaType.APPLICATION_JSON).body(Flux.just("Hello ", req.pathVariable("name")),
-				String.class);
-	}
+    private Mono<ServerResponse> helloName(ServerRequest req) {
+        return ok().contentType(MediaType.APPLICATION_JSON).body(Flux.just("Hello ", req.pathVariable("name")),
+                String.class);
+    }
 }

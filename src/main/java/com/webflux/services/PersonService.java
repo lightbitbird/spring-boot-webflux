@@ -1,4 +1,4 @@
-package com.webflux.handler;
+package com.webflux.services;
 
 import java.util.List;
 import java.util.Optional;
@@ -15,7 +15,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Component
-public class PersonHandler {
+public class PersonService {
 
     @Autowired
     private PersonRepository personRepository;
