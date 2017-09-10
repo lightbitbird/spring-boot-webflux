@@ -20,7 +20,7 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
 import com.webflux.domain.Person;
-import com.webflux.handler.PersonHandler;
+import com.webflux.services.PersonService;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -29,7 +29,7 @@ import reactor.core.publisher.Mono;
 public class PersonRouter {
 
     @Autowired
-    private PersonHandler personHandler;
+    private PersonService personHandler;
 
     public RouterFunction<ServerResponse> routes() {
         return nest(path("/person"),
